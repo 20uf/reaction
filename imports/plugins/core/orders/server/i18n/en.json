@@ -16,7 +16,11 @@
           "fulfillment": "Fulfillment",
           "orderDetails": "Order Details",
           "summary": "Summary",
-          "invoice": "Invoice",
+          "invoice": {
+            "cardTitle": "Invoice",
+            "adjustedTotal": "Adjusted Total",
+            "capturedTotal": "Captured Total"
+          },
           "shipmentTracking": "Shipment"
         }
       }
