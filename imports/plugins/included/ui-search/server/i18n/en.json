@@ -6,7 +6,10 @@
       "admin": {
         "shortcut": {},
         "dashboard": {},
-        "settings": {}
+        "settings": {},
+        "orderWorkflow": {
+          "orderDetails": "Order Details"
+        }
       }
     }
   }
