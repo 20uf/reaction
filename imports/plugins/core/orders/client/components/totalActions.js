@@ -15,7 +15,7 @@ class TotalActions extends Component {
     return (
       <div className="order-summary-form-group bg-success" style={{ lineHeight: 3, marginRight: -15, marginLeft: -15 }}>
         <span style={{ marginLeft: 15 }}>
-          <strong className="text-success">CAPTURED TOTAL</strong>
+          <strong className="text-success" data-i18n="admin.orderWorkflow.invoice.capturedTotal">Captured Total</strong>
         </span>
 
         <div className="invoice-details" style={{ marginRight: 15 }}>
@@ -31,7 +31,7 @@ class TotalActions extends Component {
     return (
       <div className="order-summary-form-group bg-danger" style={{ marginTop: 2, lineHeight: 3, marginRight: -15, marginLeft: -15 }}>
         <span className="text-danger" style={{ marginLeft: 15 }}>
-          <strong>ADJUSTED TOTAL</strong>
+          <strong data-i18n="admin.orderWorkflow.invoice.adjustedTotal">Adjusted Total</strong>
         </span>
 
         <div className="invoice-details" style={{ marginRight: 15 }}>
