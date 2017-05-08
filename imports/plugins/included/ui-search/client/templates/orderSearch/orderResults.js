@@ -138,7 +138,7 @@ Template.searchModal.events({
     if (isActionViewOpen === false) {
       Reaction.showActionView({
         label: "Order Details",
-        i18nKeyLabel: "orderWorkflow.orderDetails",
+        i18nKeyLabel: "admin.orderWorkflow.orderDetails",
         data: instance.data.order,
         props: {
           size: "large"

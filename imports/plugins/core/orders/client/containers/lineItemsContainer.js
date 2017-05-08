@@ -4,6 +4,7 @@ import { composeWithTracker } from "/lib/api/compose";
 import { Media } from "/lib/collections";
 import { Loading } from "/imports/plugins/core/ui/client/components";
 import { TranslationProvider } from "/imports/plugins/core/ui/client/providers";
+import { Card, CardHeader, CardBody, CardGroup } from "/imports/plugins/core/ui/client/components";
 import LineItems from "../components/lineItems.js";
 
 class LineItemsContainer extends Component {
@@ -76,15 +77,28 @@ class LineItemsContainer extends Component {
     const { invoice, uniqueItems } = this.props;
     return (
       <TranslationProvider>
-        <LineItems
-          onClose={this.handleClose}
-          invoice={invoice}
-          isClosed={this.state.isClosed}
-          isExpanded={this.isExpanded}
-          displayMedia={this.handleDisplayMedia}
-          handleClick={this.handleClick}
-          uniqueItems={uniqueItems}
-        />
+        <CardGroup>
+          <Card
+            expanded={true}
+          >
+            <CardHeader
+              actAsExpander={true}
+              i18nKeyTitle="admin.orderWorkflow.invoice.cardTitle"
+              title="Invoice"
+            />
+            <CardBody expandable={true}>
+              <LineItems
+                onClose={this.handleClose}
+                invoice={invoice}
+                isClosed={this.state.isClosed}
+                isExpanded={this.isExpanded}
+                displayMedia={this.handleDisplayMedia}
+                handleClick={this.handleClick}
+                uniqueItems={uniqueItems}
+              />
+            </CardBody>
+          </Card>
+        </CardGroup>
       </TranslationProvider>
     );
   }

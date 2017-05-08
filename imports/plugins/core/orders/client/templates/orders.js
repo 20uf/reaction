@@ -223,7 +223,7 @@ Template.ordersListItem.events({
     // Show the action view - detail view
     Reaction.setActionViewDetail({
       label: "Order Details",
-      i18nKeyLabel: "orderWorkflow.orderDetails",
+      i18nKeyLabel: "admin.orderWorkflow.orderDetails",
       data: {
         order: instance.data.order
       },
@@ -258,7 +258,7 @@ Template.ordersListItem.events({
     if (isActionViewOpen === false) {
       Reaction.showActionView({
         label: "Order Details",
-        i18nKeyLabel: "orderWorkflow.orderDetails",
+        i18nKeyLabel: "admin.orderWorkflow.orderDetails",
         data: { order },
         props: {
           size: "large"

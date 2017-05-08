@@ -2,8 +2,10 @@ import React, { Component, PropTypes } from "react";
 import { composeWithTracker } from "/lib/api/compose";
 import TotalActions from "../components/totalActions";
 import { Loading } from "/imports/plugins/core/ui/client/components";
+import { TranslationProvider } from "/imports/plugins/core/ui/client/providers";
+import { Card, CardHeader, CardBody, CardGroup } from "/imports/plugins/core/ui/client/components";
 
-class TotalActionsContaner extends Component {
+class TotalActionsContainer extends Component {
 
   static propTypes = {
     adjustedTotal: PropTypes.number,
@@ -28,14 +30,22 @@ class TotalActionsContaner extends Component {
   render() {
     const  { paymentCaptured, adjustedTotal, invoice } =  this.props;
     return (
-      <div>
-        <TotalActions
-          isAdjusted={this.isAdjusted}
-          paymentCaptured={paymentCaptured}
-          adjustedTotal={adjustedTotal}
-          invoice={invoice}
-        />
-      </div>
+      <TranslationProvider>
+        <CardGroup>
+          <Card
+            expanded={true}
+          >
+            <CardBody expandable={true}>
+              <TotalActions
+                isAdjusted={this.isAdjusted}
+                paymentCaptured={paymentCaptured}
+                adjustedTotal={adjustedTotal}
+                invoice={invoice}
+              />
+            </CardBody>
+          </Card>
+        </CardGroup>
+      </TranslationProvider>
     );
   }
 }
@@ -48,4 +58,4 @@ const composer = (props, onData) => {
   });
 };
 
-export default composeWithTracker(composer, Loading)(TotalActionsContaner);
+export default composeWithTracker(composer, Loading)(TotalActionsContainer);

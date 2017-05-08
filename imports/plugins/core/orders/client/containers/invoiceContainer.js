@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react";
 import moment from "moment";
 import { composeWithTracker } from "/lib/api/compose";
 import { Loading } from "/imports/plugins/core/ui/client/components";
+import { Card, CardHeader, CardBody, CardGroup } from "/imports/plugins/core/ui/client/components";
 import { TranslationProvider } from "/imports/plugins/core/ui/client/providers";
 import Invoice from "../components/invoice.js";
 
@@ -47,19 +48,27 @@ class InvoiceContainer extends Component {
 
     return (
       <TranslationProvider>
-        <Invoice
-          canMakeAdjustments={canMakeAdjustments}
-          paymentCaptured={paymentCaptured}
-          isOpen={this.state.isOpen}
-          discounts={discounts}
-          handleClick={this.handleClick}
-          invoice={invoice}
-          orderId={orderId}
-          refunds={refunds}
-          dateFormat={this.dateFormat}
-          isFetching={isFetching}
-          collection={collection}
-        />
+        <CardGroup>
+          <Card
+            expanded={true}
+          >
+            <CardBody expandable={true}>
+              <Invoice
+                canMakeAdjustments={canMakeAdjustments}
+                paymentCaptured={paymentCaptured}
+                isOpen={this.state.isOpen}
+                discounts={discounts}
+                handleClick={this.handleClick}
+                invoice={invoice}
+                orderId={orderId}
+                refunds={refunds}
+                dateFormat={this.dateFormat}
+                isFetching={isFetching}
+                collection={collection}
+              />
+            </CardBody>
+          </Card>
+        </CardGroup>
       </TranslationProvider>
     );
   }
